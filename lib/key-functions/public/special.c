@@ -43,6 +43,49 @@ void kbfun_shift_press_release(void) {
 	kbfun_press_release();
 }
 
+
+/*
+ * [name]
+ *   LeftGUI + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_command_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   Ctrl + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_ctrl_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftControl);
+	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   Ctrl + Command + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_ctrl_command_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftControl);
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	kbfun_press_release();
+}
+
 /*
  * [name]
  *   Two keys => capslock
