@@ -57,9 +57,9 @@ void kbfun_layer_pop_all(void) {
 #define  sctprre  &kbfun_ctrl_press_release
 #define  scmprre  &kbfun_command_press_release
 #define  sccprre  &kbfun_ctrl_command_press_release
-#define  espre    &kbfun_alt_press_release
-#define  salprre  &kbfun_escape_release_key
-#define  rtpre    &kbfun_enter_release_key
+#define  salprre  &kbfun_alt_press_release
+#define  sespre   &kbfun_escape_release_key
+#define  srtpre   &kbfun_enter_release_key
 #define  sppre    &kbfun_space_release_key
 #define  s2kcap   &kbfun_2_keys_capslock_press_release
 #define  slpunum  &kbfun_layer_push_numpad
@@ -158,7 +158,7 @@ KB_MATRIX_LAYER(
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	KEY_Equal_Plus,	KEY_Equal_Plus,	KEY_GraveAccent_Tilde,	KEY_GraveAccent_Tilde,	0,	0,	
 	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
-	0,	KEY_z_Z,	0,	KEY_c_C,	0,	0,	0,	
+	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	
 	0,	0,	
 	0,	0,	0,	
@@ -171,7 +171,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
-	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
+	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	
 	0,	0,	
@@ -194,7 +194,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
-	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
+	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	
 	0,	0,	
@@ -314,12 +314,12 @@ KB_MATRIX_LAYER(
 	// left hand
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	lpush1,	
-	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
+	sespre,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
 	NULL,	NULL,	spu3alsp,	
-	rtpre,	lpush3,	spu3altp,	
+	srtpre,	lpush3,	spu3altp,	
 	// right hand
 	lpush2,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -328,7 +328,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	lpop,	
 	kprrel,	kprrel,	
 	sccprre,	NULL,	NULL,	
-	scmprre,	espre,	kprrel	
+	scmprre,	sespre,	kprrel	
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -415,7 +415,7 @@ KB_MATRIX_LAYER(
 	// right hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	salprre,	salprre,	salprre,	salprre,	NULL,	NULL,	
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -429,7 +429,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	scmprre,	scmprre,	scmprre,	scmprre,	NULL,	NULL,	
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -549,12 +549,12 @@ KB_MATRIX_LAYER(
 	// left hand
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	lpop1,	
-	espre,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
+	sespre,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
 	NULL,	NULL,	spo3alsr,	
-	rtpre,	lpop3,	spo3altr,	
+	srtpre,	lpop3,	spo3altr,	
 	// right hand
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -563,7 +563,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	kprrel,	kprrel,	
 	sccprre,	NULL,	NULL,	
-	scmprre,	espre,	kprrel	
+	scmprre,	sespre,	kprrel	
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -641,7 +641,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	salprre,	salprre,	salprre,	salprre,	NULL,	NULL,	
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -664,7 +664,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	scmprre,	scmprre,	scmprre,	scmprre,	NULL,	NULL,	
+	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
