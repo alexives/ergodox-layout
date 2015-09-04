@@ -57,9 +57,8 @@ void kbfun_layer_pop_all(void) {
 #define  sctprre  &kbfun_ctrl_press_release
 #define  scmprre  &kbfun_command_press_release
 #define  sccprre  &kbfun_ctrl_command_press_release
-#define  espre    &kbfun_escape_release_key
-#define  stogl3   &kbfun_shift_toggle_layer_3
-#define  satogl3  &kbfun_shift_alt_toggle_layer_3
+#define  espre    &kbfun_alt_press_release
+#define  salprre  &kbfun_escape_release_key
 #define  rtpre    &kbfun_enter_release_key
 #define  sppre    &kbfun_space_release_key
 #define  s2kcap   &kbfun_2_keys_capslock_press_release
@@ -80,8 +79,8 @@ KB_MATRIX_LAYER(
 	KEY_LeftShift,	KEY_z_Z,	KEY_x_X,	KEY_c_C,	KEY_v_V,	KEY_b_B,	KEY_F19,	
 	KEY_LeftAlt,	KEY_LeftBracket_LeftBrace,	KEY_RightBracket_RightBrace,	KEY_Backslash_Pipe,	KEY_Equal_Plus,	
 	KEY_VolumeDown,	KEY_VolumeUp,	
-	0,	0,	KEY_a_A,	
-	KEY_LeftGUI,	3,	KEY_Spacebar,	
+	0,	0,	5,	
+	KEY_LeftGUI,	3,	4,	
 	// right hand
 	2,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_DeleteBackspace,	
 	KEY_GraveAccent_Tilde,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Dash_Underscore,	
@@ -89,8 +88,8 @@ KB_MATRIX_LAYER(
 	KEY_RightGUI,	KEY_n_N,	KEY_m_M,	KEY_Comma_LessThan,	KEY_Period_GreaterThan,	KEY_Slash_Question,	KEY_ReturnEnter,	
 	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	
 	KEY_PrintScreen,	KEY_ScrollLock,	
-	3,	0,	0,	
-	3,	KEY_LeftControl,	KEY_LeftGUI	
+	KEY_a_A,	0,	0,	
+	KEY_Spacebar,	KEY_LeftControl,	KEY_Spacebar	
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -168,7 +167,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
-	0,	0,	0,	0,	0,	0,	
+	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	
 	0,	0,	
@@ -191,7 +190,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
-	0,	0,	0,	0,	0,	0,	
+	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
 	0,	0,	0,	0,	0,	
 	0,	0,	
@@ -315,8 +314,8 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
-	NULL,	NULL,	satogl3,	
-	rtpre,	lpush3,	stogl3,	
+	NULL,	NULL,	lpush5,	
+	rtpre,	lpush3,	lpush4,	
 	// right hand
 	lpush2,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -325,7 +324,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	lpop,	
 	kprrel,	kprrel,	
 	sccprre,	NULL,	NULL,	
-	scmprre,	espre,	sppre	
+	scmprre,	espre,	kprrel	
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -412,7 +411,7 @@ KB_MATRIX_LAYER(
 	// right hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
+	salprre,	salprre,	salprre,	salprre,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -426,7 +425,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
+	scmprre,	scmprre,	scmprre,	scmprre,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -550,8 +549,8 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
-	NULL,	NULL,	satogl3,	
-	rtpre,	lpop3,	stogl3,	
+	NULL,	NULL,	lpop5,	
+	rtpre,	lpop3,	lpop4,	
 	// right hand
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -560,7 +559,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	kprrel,	kprrel,	
 	sccprre,	NULL,	NULL,	
-	scmprre,	espre,	sppre	
+	scmprre,	espre,	kprrel	
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -638,7 +637,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
+	salprre,	salprre,	salprre,	salprre,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	
@@ -661,7 +660,7 @@ KB_MATRIX_LAYER(
 	// left hand
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
-	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
+	scmprre,	scmprre,	scmprre,	scmprre,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	NULL,	NULL,	NULL,	
 	NULL,	NULL,	

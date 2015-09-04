@@ -43,44 +43,6 @@ void kbfun_shift_press_release(void) {
 }
 
 /*
- * Helper function for pushing extra keys while toggleing layer 3.
- */
-static void kbfun_key_push3_press_release(uint8_t other_key) {
-	if (IS_PRESSED == true) {
-		kbfun_layer_push_3();
-	} else {
-		kbfun_layer_pop_3();
-	}
-	_kbfun_press_release(IS_PRESSED, other_key);
-}
-
-/*
- * [name]
- *   shift + push / pop layer 3
- *
- * [description]
- *   Generate a 'shift' press or release before the normal keypress or
- *   keyrelease
- */
-void kbfun_shift_toggle_layer_3(void) {
-	kbfun_key_push3_press_release(KEY_LeftShift);
-}
-
-/*
- * [name]
- *   shift + alt + push / pop layer 3
- *
- * [description]
- *   Generate a 'shift' press or release before the normal keypress or
- *   keyrelease
- */
-void kbfun_shift_alt_toggle_layer_3(void) {
-	kbfun_key_push3_press_release(KEY_LeftShift);
-	_kbfun_press_release(IS_PRESSED, KEY_LeftAlt);
-}
-
-
-/*
  * [name]
  *   LeftGUI + press|release
  *
@@ -139,15 +101,19 @@ void kbfun_alt_press_release(void) {
 /*
  * Helper function for toggling another key if no other keys are pressed.
  */
-static void kbfun_release_other_key(uint8_t other_key) {
-	if (IS_PRESSED != false) {
-		kbfun_press_release();
-		if (check_key_press_index == current_key_press_index) {
-			_kbfun_press_release(true, other_key);
-			_kbfun_press_release(false, other_key);
+static void kbfun_release_other_key(uint8_t alternate_key) {
+	uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+	kbfun_press_release();
+	usb_keyboard_send();
+	if (!IS_PRESSED) {
+		if (_kbfun_last_key_pressed(keycode)) {
+			_kbfun_press_release(true, alternate_key);
+			usb_keyboard_send();
+			_kbfun_press_release(false, alternate_key);
+			usb_keyboard_send();
 		}
 	}
-}
+} 
 
 
 /*

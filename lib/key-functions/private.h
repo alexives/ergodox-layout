@@ -19,8 +19,9 @@
 
 	// --------------------------------------------------------------------
 
-	void _kbfun_press_release     (bool press, uint8_t keycode);
-	bool _kbfun_is_pressed        (uint8_t keycode);
+	void  _kbfun_press_release     (bool press, uint8_t keycode);
+	bool  _kbfun_is_pressed        (uint8_t keycode);
+	bool  _kbfun_last_key_pressed  (uint8_t keycode);
 
 #endif
 

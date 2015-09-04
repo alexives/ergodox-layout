@@ -82,7 +82,6 @@ static void layer_push(uint8_t local_id) {
 	uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
 	main_layers_pop_id(layer_ids[local_id]);
 	layer_ids[local_id] = main_layers_push(keycode);
-	check_key_press_index = current_key_press_index;
 }
 
 static void layer_pop(uint8_t local_id) {

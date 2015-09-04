@@ -16,6 +16,8 @@
 #include "../../main.h"
 #include "./public.h"
 
+static uint8_t last_key_pressed;
+
 // ----------------------------------------------------------------------------
 
 /*
@@ -31,6 +33,9 @@
  *   the end of the current cycle (see main.c)
  */
 void _kbfun_press_release(bool press, uint8_t keycode) {
+	if (press) {
+		last_key_pressed = keycode;
+	}
 	// no-op
 	if (keycode == 0)
 		return;
@@ -85,6 +90,10 @@ void _kbfun_press_release(bool press, uint8_t keycode) {
 			}
 		}
 	}
+}
+
+bool _kbfun_last_key_pressed(uint8_t keycode) {
+	return (last_key_pressed == keycode);
 }
 
 /*
