@@ -64,6 +64,10 @@ void kbfun_layer_pop_all(void) {
 #define  s2kcap   &kbfun_2_keys_capslock_press_release
 #define  slpunum  &kbfun_layer_push_numpad
 #define  slponum  &kbfun_layer_pop_numpad
+#define  spu3altp &kbfun_push3_and_alt
+#define  spo3altr &kbfun_pop3_and_alt
+#define  spu3alsp &kbfun_push3_and_alt_shift
+#define  spo3alsr &kbfun_pop3_and_alt_shift
 // ----------------------------------------------------------------------------
 
 // LAYOUT ---------------------------------------------------------------------
@@ -79,8 +83,8 @@ KB_MATRIX_LAYER(
 	KEY_LeftShift,	KEY_z_Z,	KEY_x_X,	KEY_c_C,	KEY_v_V,	KEY_b_B,	KEY_F19,	
 	KEY_LeftAlt,	KEY_LeftBracket_LeftBrace,	KEY_RightBracket_RightBrace,	KEY_Backslash_Pipe,	KEY_Equal_Plus,	
 	KEY_VolumeDown,	KEY_VolumeUp,	
-	0,	0,	5,	
-	KEY_LeftGUI,	3,	4,	
+	0,	0,	3,	
+	KEY_LeftGUI,	3,	3,	
 	// right hand
 	2,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_DeleteBackspace,	
 	KEY_GraveAccent_Tilde,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Dash_Underscore,	
@@ -314,8 +318,8 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
-	NULL,	NULL,	lpush5,	
-	rtpre,	lpush3,	lpush4,	
+	NULL,	NULL,	spu3alsp,	
+	rtpre,	lpush3,	spu3altp,	
 	// right hand
 	lpush2,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -549,8 +553,8 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	
-	NULL,	NULL,	lpop5,	
-	rtpre,	lpop3,	lpop4,	
+	NULL,	NULL,	spo3alsr,	
+	rtpre,	lpop3,	spo3altr,	
 	// right hand
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	

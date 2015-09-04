@@ -99,6 +99,60 @@ void kbfun_alt_press_release(void) {
 }
 
 /*
+ * [name]
+ *   Push 3 and Press left Alt
+ *
+ * [description]
+ *   Push layer 3 down and hold alt.
+ */
+void kbfun_push3_and_alt(void) {
+	kbfun_layer_push_3();
+	_kbfun_press_release(true, KEY_LeftAlt);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Pop 3 and Release Left Alt
+ *
+ * [description]
+ *   Pop layer 3 off and release the alt key.
+ */
+void kbfun_pop3_and_alt(void) {
+	kbfun_layer_pop_3();
+	_kbfun_press_release(false, KEY_LeftAlt);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Push 3 and Press left Alt and Shift
+ *
+ * [description]
+ *   Push layer 3 down and hold alt and shift
+ */
+void kbfun_push3_and_alt_shift(void) {
+	kbfun_layer_push_3();
+	_kbfun_press_release(true, KEY_LeftAlt);
+	_kbfun_press_release(true, KEY_LeftShift);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Pop 3 and Release Left Alt and Shift
+ *
+ * [description]
+ *   Pop layer 3 off and release the alt and shift keys.
+ */
+void kbfun_pop3_and_alt_shift(void) {
+	kbfun_layer_pop_3();
+	_kbfun_press_release(false, KEY_LeftAlt);
+	_kbfun_press_release(false, KEY_LeftShift);
+	usb_keyboard_send();
+}
+
+/*
  * Helper function for toggling another key if no other keys are pressed.
  */
 static void kbfun_release_other_key(uint8_t alternate_key) {

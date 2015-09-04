@@ -58,6 +58,10 @@
 	void kbfun_enter_release_key             (void);
 	void kbfun_space_release_key             (void);
 	void kbfun_alt_press_release             (void);
+	void kbfun_pop3_and_alt                  (void);
+	void kbfun_push3_and_alt                 (void);
+	void kbfun_pop3_and_alt_shift            (void);
+	void kbfun_push3_and_alt_shift           (void);
 
 #endif
 
