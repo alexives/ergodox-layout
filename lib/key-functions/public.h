@@ -17,6 +17,7 @@
 
 	// basic
 	void kbfun_press_release (void);
+	bool kbfun_no_other_press(void);
 	void kbfun_toggle        (void);
 	void kbfun_transparent   (void);
 	// --- layer push/pop functions
@@ -47,9 +48,20 @@
 
 	// special
 	void kbfun_shift_press_release           (void);
+	void kbfun_command_press_release         (void);
+	void kbfun_ctrl_command_press_release    (void);
+	void kbfun_ctrl_press_release            (void);
 	void kbfun_2_keys_capslock_press_release (void);
 	void kbfun_layer_push_numpad             (void);
 	void kbfun_layer_pop_numpad              (void);
+	void kbfun_escape_release_key            (void);
+	void kbfun_enter_release_key             (void);
+	void kbfun_space_release_key             (void);
+	void kbfun_alt_press_release             (void);
+	void kbfun_pop3_and_alt                  (void);
+	void kbfun_push3_and_alt                 (void);
+	void kbfun_pop3_and_alt_shift            (void);
+	void kbfun_push3_and_alt_shift           (void);
 
 #endif
 

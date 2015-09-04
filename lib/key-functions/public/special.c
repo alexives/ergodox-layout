@@ -29,7 +29,6 @@
 
 // ----------------------------------------------------------------------------
 
-
 /*
  * [name]
  *   Shift + press|release
@@ -41,6 +40,172 @@
 void kbfun_shift_press_release(void) {
 	_kbfun_press_release(IS_PRESSED, KEY_LeftShift);
 	kbfun_press_release();
+}
+
+/*
+ * [name]
+ *   LeftGUI + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_command_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   Ctrl + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_ctrl_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftControl);
+	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   Ctrl + Command + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_ctrl_command_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftControl);
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   ALT + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_alt_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftAlt);
+	kbfun_press_release();
+}
+
+/*
+ * [name]
+ *   Push 3 and Press left Alt
+ *
+ * [description]
+ *   Push layer 3 down and hold alt.
+ */
+void kbfun_push3_and_alt(void) {
+	kbfun_layer_push_3();
+	_kbfun_press_release(true, KEY_LeftAlt);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Pop 3 and Release Left Alt
+ *
+ * [description]
+ *   Pop layer 3 off and release the alt key.
+ */
+void kbfun_pop3_and_alt(void) {
+	kbfun_layer_pop_3();
+	_kbfun_press_release(false, KEY_LeftAlt);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Push 3 and Press left Alt and Shift
+ *
+ * [description]
+ *   Push layer 3 down and hold alt and shift
+ */
+void kbfun_push3_and_alt_shift(void) {
+	kbfun_layer_push_3();
+	_kbfun_press_release(true, KEY_LeftAlt);
+	_kbfun_press_release(true, KEY_LeftShift);
+	usb_keyboard_send();
+}
+
+/*
+ * [name]
+ *   Pop 3 and Release Left Alt and Shift
+ *
+ * [description]
+ *   Pop layer 3 off and release the alt and shift keys.
+ */
+void kbfun_pop3_and_alt_shift(void) {
+	kbfun_layer_pop_3();
+	_kbfun_press_release(false, KEY_LeftAlt);
+	_kbfun_press_release(false, KEY_LeftShift);
+	usb_keyboard_send();
+}
+
+/*
+ * Helper function for toggling another key if no other keys are pressed.
+ */
+static void kbfun_release_other_key(uint8_t alternate_key) {
+	uint8_t keycode = kb_layout_get(LAYER, ROW, COL);
+	kbfun_press_release();
+	usb_keyboard_send();
+	if (!IS_PRESSED) {
+		if (_kbfun_last_key_pressed(keycode)) {
+			_kbfun_press_release(true, alternate_key);
+			usb_keyboard_send();
+			_kbfun_press_release(false, alternate_key);
+			usb_keyboard_send();
+		}
+	}
+} 
+
+
+/*
+ * [name]
+ *   Key Release or Escape
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_escape_release_key() {
+	kbfun_release_other_key(KEY_Escape);
+}
+
+
+/*
+ * [name]
+ *   Key Release or Space
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_space_release_key() {
+	kbfun_release_other_key(KEY_Spacebar);
+}
+
+
+/*
+ * [name]
+ *   Key Release or Return/Enter
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_enter_release_key() {
+	kbfun_release_other_key(KEY_ReturnEnter);
 }
 
 /*
