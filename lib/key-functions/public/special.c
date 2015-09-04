@@ -29,7 +29,6 @@
 
 // ----------------------------------------------------------------------------
 
-
 /*
  * [name]
  *   Shift + press|release
@@ -41,6 +40,43 @@
 void kbfun_shift_press_release(void) {
 	_kbfun_press_release(IS_PRESSED, KEY_LeftShift);
 	kbfun_press_release();
+}
+
+/*
+ * Helper function for pushing extra keys while toggleing layer 3.
+ */
+static void kbfun_key_push3_press_release(uint8_t other_key) {
+	if (IS_PRESSED == true) {
+		kbfun_layer_push_3();
+	} else {
+		kbfun_layer_pop_3();
+	}
+	_kbfun_press_release(IS_PRESSED, other_key);
+}
+
+/*
+ * [name]
+ *   shift + push / pop layer 3
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_shift_toggle_layer_3(void) {
+	kbfun_key_push3_press_release(KEY_LeftShift);
+}
+
+/*
+ * [name]
+ *   shift + alt + push / pop layer 3
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_shift_alt_toggle_layer_3(void) {
+	kbfun_key_push3_press_release(KEY_LeftShift);
+	_kbfun_press_release(IS_PRESSED, KEY_LeftAlt);
 }
 
 
@@ -84,6 +120,72 @@ void kbfun_ctrl_command_press_release(void) {
 	_kbfun_press_release(IS_PRESSED, KEY_LeftControl);
 	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
 	kbfun_press_release();
+}
+
+
+/*
+ * [name]
+ *   ALT + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_alt_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftAlt);
+	kbfun_press_release();
+}
+
+/*
+ * Helper function for toggling another key if no other keys are pressed.
+ */
+static void kbfun_release_other_key(uint8_t other_key) {
+	if (IS_PRESSED != false) {
+		kbfun_press_release();
+		if (check_key_press_index == current_key_press_index) {
+			_kbfun_press_release(true, other_key);
+			_kbfun_press_release(false, other_key);
+		}
+	}
+}
+
+
+/*
+ * [name]
+ *   Key Release or Escape
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_escape_release_key() {
+	kbfun_release_other_key(KEY_Escape);
+}
+
+
+/*
+ * [name]
+ *   Key Release or Space
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_space_release_key() {
+	kbfun_release_other_key(KEY_Spacebar);
+}
+
+
+/*
+ * [name]
+ *   Key Release or Return/Enter
+ *
+ * [description]
+ *   Press a key, or if there were no keys pressed when the layer
+ *   was pressed, send escape.
+ */
+void kbfun_enter_release_key() {
+	kbfun_release_other_key(KEY_ReturnEnter);
 }
 
 /*

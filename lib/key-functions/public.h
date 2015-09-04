@@ -53,6 +53,11 @@
 	void kbfun_2_keys_capslock_press_release (void);
 	void kbfun_layer_push_numpad             (void);
 	void kbfun_layer_pop_numpad              (void);
+	void kbfun_escape_release_key            (void);
+	void kbfun_enter_release_key             (void);
+	void kbfun_space_release_key             (void);
+	void kbfun_shift_toggle_layer_3          (void);
+	void kbfun_shift_alt_toggle_layer_3      (void);
 
 #endif
 

@@ -41,6 +41,8 @@ uint8_t main_arg_row;
 uint8_t main_arg_col;
 bool    main_arg_is_pressed;
 bool    main_arg_was_pressed;
+int     current_key_press_index;
+int     check_key_press_index;
 
 // ----------------------------------------------------------------------------
 
@@ -49,6 +51,8 @@ bool    main_arg_was_pressed;
  */
 int main(void) {
 	kb_init();  // does controller initialization too
+
+	current_key_press_index = 0;
 
 	kb_led_state_power_on();
 
@@ -99,6 +103,7 @@ int main(void) {
 					main_arg_col          = col;
 					main_arg_layer_offset = 0;
 					main_exec_key();
+					current_key_press_index ++;
 				}
 			}
 		}

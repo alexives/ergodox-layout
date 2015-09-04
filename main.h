@@ -30,6 +30,8 @@
 	extern uint8_t main_arg_col;
 	extern bool    main_arg_is_pressed;
 	extern bool    main_arg_was_pressed;
+	extern int     current_key_press_index;
+	extern int     check_key_press_index;
 
 	// --------------------------------------------------------------------
 
