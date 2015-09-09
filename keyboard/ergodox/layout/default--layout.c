@@ -77,7 +77,7 @@ KB_MATRIX_LAYER(
 	// unused
 	0,	
 	// left hand
-	KEY_Escape,	KEY_1_Exclamation,	KEY_2_At,	KEY_3_Pound,	KEY_4_Dollar,	KEY_5_Percent,	KEY_Escape,	
+	KEY_Escape,	KEY_1_Exclamation,	KEY_2_At,	KEY_3_Pound,	KEY_4_Dollar,	KEY_5_Percent,	KEY_6_Caret,	
 	KEY_Tab,	KEY_q_Q,	KEY_w_W,	KEY_e_E,	KEY_r_R,	KEY_t_T,	1,	
 	KEY_LeftControl,	KEY_a_A,	KEY_s_S,	KEY_d_D,	KEY_f_F,	KEY_g_G,	
 	KEY_LeftShift,	KEY_z_Z,	KEY_x_X,	KEY_c_C,	KEY_v_V,	KEY_b_B,	KEY_F19,	
@@ -86,8 +86,8 @@ KB_MATRIX_LAYER(
 	0,	0,	3,	
 	KEY_LeftGUI,	3,	3,	
 	// right hand
-	2,	KEY_6_Caret,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_DeleteBackspace,	
-	0,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Dash_Underscore,	
+	KEY_Equal_Plus,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_Dash_Underscore,	KEY_DeleteBackspace,	
+	2,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Dash_Underscore,	
 	KEY_h_H,	KEY_j_J,	KEY_k_K,	KEY_l_L,	KEY_Semicolon_Colon,	KEY_SingleQuote_DoubleQuote,	
 	KEY_RightGUI,	KEY_n_N,	KEY_m_M,	KEY_Comma_LessThan,	KEY_Period_GreaterThan,	KEY_Slash_Question,	KEY_ReturnEnter,	
 	KEY_LeftAlt,	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,
@@ -321,8 +321,8 @@ KB_MATRIX_LAYER(
 	NULL,	NULL,	spu3alsp,	
 	kprrel,	lpush3,	spu3altp,	
 	// right hand
+	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	lpush2,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
-	lpop,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
@@ -367,8 +367,8 @@ KB_MATRIX_LAYER(
 	NULL,	NULL,	ktrans,	
 	ktrans,	ktrans,	ktrans,	
 	// right hand
-	lpop2,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,	
-	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
+	NULL,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,	
+	lpop2,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	NULL,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,	
@@ -556,8 +556,8 @@ KB_MATRIX_LAYER(
 	NULL,	NULL,	spo3alsr,	
 	kprrel,	lpop3,	spo3altr,	
 	// right hand
-	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
+	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,	
 	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
@@ -603,7 +603,7 @@ KB_MATRIX_LAYER(
 	ktrans,	ktrans,	ktrans,	
 	// right hand
 	NULL,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,	
-	ktrans,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
+	NULL,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	NULL,	NULL,	kprrel,	kprrel,	kprrel,	kprrel,	NULL,	
 	kprrel,	kprrel,	kprrel,	kprrel,	ktrans,	
