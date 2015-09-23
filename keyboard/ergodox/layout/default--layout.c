@@ -146,7 +146,7 @@ KB_MATRIX_LAYER(
 	// unused
 	0,	
 	// left hand
-	0,	0,	0,	0,	0,	0,	0,	
+	0,	KEY_F1,	KEY_F2,	KEY_F3,	KEY_F4,	KEY_F5,	KEY_F6,	
 	0,	KEY_LeftBracket_LeftBrace,	KEY_RightBracket_RightBrace,	KEY_LeftBracket_LeftBrace,	KEY_RightBracket_RightBrace,	0,	0,	
 	0,	KEY_Dash_Underscore,	KEY_Dash_Underscore,	KEY_Backslash_Pipe,	KEY_Backslash_Pipe,	0,	
 	0,	KEY_z_Z,	0,	KEY_c_C,	KEY_v_V,	0,	0,	
@@ -155,7 +155,7 @@ KB_MATRIX_LAYER(
 	0,	0,	0,	
 	0,	0,	0,	
 	// right hand
-	0,	0,	0,	0,	0,	0,	0,	
+	KEY_F12,	KEY_F7,	KEY_F8,	KEY_F9,	KEY_F10,	KEY_F11,	0,	
 	0,	0,	KEY_Equal_Plus,	KEY_Equal_Plus,	KEY_GraveAccent_Tilde,	KEY_GraveAccent_Tilde,	0,	
 	KEY_LeftArrow,	KEY_DownArrow,	KEY_UpArrow,	KEY_RightArrow,	0,	0,	
 	0,	0,	0,	0,	0,	0,	0,	
