@@ -55,6 +55,20 @@ void kbfun_command_press_release(void) {
 	kbfun_press_release();
 }
 
+/*
+ * [name]
+ *   LeftGUI + Shift + press|release
+ *
+ * [description]
+ *   Generate a 'shift' press or release before the normal keypress or
+ *   keyrelease
+ */
+void kbfun_command_shift_press_release(void) {
+	_kbfun_press_release(IS_PRESSED, KEY_LeftGUI);
+	_kbfun_press_release(IS_PRESSED, KEY_LeftShift);
+	kbfun_press_release();
+}
+
 
 /*
  * [name]
