@@ -88,7 +88,7 @@ KB_MATRIX_LAYER(
 	KEY_LeftGUI,	3,	3,
 	// right hand
 	KEY_Equal_Plus,	KEY_7_Ampersand,	KEY_8_Asterisk,	KEY_9_LeftParenthesis,	KEY_0_RightParenthesis,	KEY_Dash_Underscore,	KEY_DeleteBackspace,
-	KEY_RightBracket_RightBrace,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Dash_Underscore,
+	KEY_RightBracket_RightBrace,	KEY_y_Y,	KEY_u_U,	KEY_i_I,	KEY_o_O,	KEY_p_P,	KEY_Backslash_Pipe,
 	KEY_h_H,	KEY_j_J,	KEY_k_K,	KEY_l_L,	KEY_Semicolon_Colon,	KEY_SingleQuote_DoubleQuote,
 	KEY_0_RightParenthesis,	KEY_n_N,	KEY_m_M,	KEY_Comma_LessThan,	KEY_Period_GreaterThan,	KEY_Slash_Question,	KEY_ReturnEnter,
 	KEY_PageUp,	KEY_PageDown,	KEY_Insert,	KEY_DeleteForward,	2,
