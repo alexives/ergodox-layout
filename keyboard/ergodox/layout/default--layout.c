@@ -94,7 +94,7 @@ KB_MATRIX_LAYER(
 	KEY_PageUp,	KEY_PageDown,	KEY_Insert,	KEY_DeleteForward,	2,
 	KEY_PrintScreen,	KEY_ScrollLock,
 	KEY_GraveAccent_Tilde,	0,	0,
-	KEY_Tab,	KEY_LeftControl,	KEY_Spacebar
+	KEY_Tab,	KEY_Spacebar,	KEY_Spacebar
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -329,7 +329,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	lpush2,
 	kprrel,	kprrel,
 	scmprre,	NULL,	NULL,
-	scmprre,	sespre,	kprrel
+	scmprre,	scmprre,	kprrel
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
@@ -564,7 +564,7 @@ KB_MATRIX_LAYER(
 	kprrel,	kprrel,	kprrel,	kprrel,	kprrel,
 	kprrel,	kprrel,
 	scmprre,	NULL,	NULL,
-	scmprre,	sespre,	kprrel
+	scmprre,	scmprre,	kprrel
 ),
 // LAYER 1
 KB_MATRIX_LAYER(
